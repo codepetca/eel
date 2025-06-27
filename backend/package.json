@@ -1,11 +1,11 @@
 {
   "name": "@eel/backend",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "src/server.ts",
   "scripts": {
-    "start": "bun src/index.ts",
-    "dev": "bun --watch src/index.ts",
-    "build": "bun build src/index.ts --outdir dist --target bun",
+    "start": "bun src/server.ts",
+    "dev": "bun --watch src/server.ts",
+    "build": "bun build src/server.ts --outdir dist --target bun",
     "type-check": "bun tsc --noEmit",
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
