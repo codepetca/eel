@@ -1,0 +1,29 @@
+{
+  "name": "eel-multiplayer-games",
+  "version": "1.0.0",
+  "description": "Real-time multiplayer games built with Colyseus",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "bun --cwd backend run dev",
+    "start": "bun --cwd backend run start",
+    "build": "bun --cwd backend run build",
+    "dev:backend": "bun --cwd backend run dev",
+    "dev:frontend": "bun --cwd frontend run dev"
+  },
+  "keywords": [
+    "multiplayer",
+    "realtime",
+    "colyseus",
+    "tic-tac-toe",
+    "games"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
