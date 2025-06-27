@@ -1,18 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "lib": ["ES2020"],
-    "outDir": "./lib",
-    "rootDir": "./src",
+    // Minimal config - let Bun handle most TypeScript settings automatically
+    // Bun provides excellent defaults for: target, module, moduleResolution, etc.
+    
+    // Enable strict type checking for better code quality and error catching
     "strict": true,
-    "esModuleInterop": true,
+    
+    // Skip type checking of declaration files in node_modules
+    // Prevents errors from third-party libraries with imperfect types
+    // Focuses type checking on YOUR code, not dependencies
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    
+    // Required specifically for Colyseus Schema decorators (@type)
+    // Enables support for decorators like @type("string") in TicTacToeState.ts
     "experimentalDecorators": true,
+    
+    // Emit decorator metadata at runtime (required for Colyseus Schema)
+    // Allows Colyseus to know field types for automatic synchronization
     "emitDecoratorMetadata": true,
+    
+    // Maintain compatibility with Colyseus decorator behavior
+    // Prevents conflicts between TypeScript class fields and decorators
     "useDefineForClassFields": false
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "lib"]
+  }
 }

@@ -3,8 +3,9 @@
 
 class TicTacToeClient {
     constructor() {
-        // Create Colyseus client - this manages the WebSocket connection
-        this.client = new Colyseus.Client('ws://localhost:2567');
+        // Create Colyseus client - connects to the WebSocket server
+        // Note: Using separate port (2568) for WebSocket in modern server setup
+        this.client = new Colyseus.Client('ws://localhost:2568');
         this.room = null;           // Will hold the joined room instance
         this.playerId = null;       // Our unique player ID
         this.playerSymbol = null;   // 'X' or 'O' 
