@@ -46,6 +46,10 @@ cd backend && bun dev
 2. Open http://localhost:2567 in two browser tabs
 3. Enter your names and play tic-tac-toe in real-time!
 
+## 🌐 Deployment
+
+Ready to share your game with the world? See **[DEPLOYMENT.md](DEPLOYMENT.md)** for production setup on Railway + Netlify.
+
 ## 🤝 Contributing (Simple & Fun!)
 
 ### 🚀 First Time Setup (One Command)

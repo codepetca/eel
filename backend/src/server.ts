@@ -4,7 +4,6 @@
 
 import {Server} from "colyseus";
 import {Elysia} from "elysia";
-import {staticPlugin} from "@elysiajs/static";
 import {TicTacToeRoom} from "./TicTacToeRoom";
 
 // Why Elysia?
@@ -14,13 +13,6 @@ import {TicTacToeRoom} from "./TicTacToeRoom";
 // - Modern async/await patterns and cleaner API design
 
 const app = new Elysia()
-  // Serve static files from frontend directory
-  .use(
-    staticPlugin({
-      assets: "../frontend",
-      prefix: "/",
-    })
-  )
   // Add a health check endpoint (demonstrates Elysia's clean syntax)
   .get("/health", () => ({status: "ok", framework: "elysia", runtime: "bun"}))
   // Add API endpoint to get server info
@@ -59,9 +51,9 @@ gameServer.define("tic_tac_toe", TicTacToeRoom);
 const wsPort = 2568;
 gameServer.listen(wsPort);
 
-console.log(`🚀 Modern multiplayer server stack:`);
+console.log(`🚀 Backend API server running:`);
 console.log(`📄 HTTP Server (Elysia + Bun): http://localhost:${port}`);
 console.log(`🎮 WebSocket Server (Colyseus): ws://localhost:${wsPort}`);
-console.log(`📁 Static files served from: ../frontend`);
 console.log(`🔍 Health check: http://localhost:${port}/health`);
 console.log(`📊 Server info: http://localhost:${port}/api/info`);
+console.log(`📱 Frontend: Deploy separately to Netlify`);
